@@ -2,6 +2,7 @@
 import { EnvelopeIcon } from "@heroicons/react/16/solid"
 import Image from "next/image"
 import gitIcon from "../assets/github-mark.png"
+import { toast } from "react-toastify"
 
 
 const Contact = () => {
@@ -10,7 +11,12 @@ const Contact = () => {
         const email = "syferwebdev@gmail.com";
         navigator.clipboard.writeText(email)
             .then( () => {
-                alert("Email copied to clipboard.")
+                toast.success("Email copied to clipboard!",
+                    {
+                        autoClose: 1000,
+                        position: "bottom-right"
+                    }
+                )
             })
             .catch( (err) => {
                 console.error("Failed to copy, so sorry please try again!" , err)
@@ -55,8 +61,9 @@ const Contact = () => {
                         id="reason"
                         required
                         className="form_field_style"
+                        defaultValue={"DEFAULT"}
                     >
-                        <option value="" disabled selected>Reason of contact</option>
+                        <option value="DEFAULT" hidden disabled >Reason of contact</option>
                         <option value="job">Job Opportunities</option>
                         <option value="interview">Interviews</option>
                         <option value="freelance">Freelance</option>
@@ -81,7 +88,7 @@ const Contact = () => {
                 </form>
                 {/* Contact Details */}
                 <div >
-                    <p className="text-lg ">
+                    <p className="text-lg">
                         I&apos;m always eager to connect and discuss exciting opportunities. Looking forward to hearing from you! If you prefer to reach out via email, feel free to drop me a message via:
                     </p>
                     <div className="flex flex-col gap-4 mt-8">
