@@ -1,0 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=Baloo+Thambi+2:wght@400..800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+    font-family: 'Baloo Thambi 2', 'sans-serif';
+}
+
+.section_title {
+    @apply text-4xl font-bold;
+}
+
+.theme_border {
+    @apply border-2 border-black;
+}
+
+.form_field_style {
+    @apply rounded-lg bg-[#f1f1f1] p-2 border-2 border-black focus:outline-none focus:border-blue-600;
+}
+
+.contact_colon {
+    @apply font-extrabold text-xl;
+}
+
+.contact_link {
+    @apply text-blue-600 underline hover:text-blue-800;
+}
