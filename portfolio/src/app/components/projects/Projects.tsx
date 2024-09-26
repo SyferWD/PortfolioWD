@@ -10,7 +10,7 @@ export const Projects = () => {
         {/* Projects Container */}
         <div className='flex flex-col p-12 gap-16 w-full justify-center items-center'>
           {projectsData.map((project, index) => (
-            <article key={index} className=" bg-neu-white max-w-screen-lg shadow-custom-neumorphic theme_border ">
+            <article key={index} className=" bg-neu-white max-w-screen-lg shadow-custom-grey-neu theme_border ">
               <div className=" flex items-center bg-[#f1f1f1]">
                 <Image 
                   src={project.img} 

@@ -5,6 +5,7 @@ import htmlIcon from "../assets/html-icon.gif";
 import jsIcon from "../assets/js-icon.png";
 import tsIcon from "../assets/typescript-icon.png";
 import Image from "next/image";
+import { EnvelopeIcon } from "@heroicons/react/16/solid";
 
 const images = [
     { src: htmlIcon, alt: 'HTML Icon'},
@@ -16,9 +17,9 @@ const images = [
 
 export const Hero = () => {
   return (
-    <section className="grid grid-cols-2 min-h-screen ">
+    <section className=" grid grid-cols-2 min-h-screen">
         {/* Left side: Text and CTA button */}
-        <div className="flex flex-col justify-start items-end mt-56">
+        <div className="flex flex-col justify-start items-end mt-40">
             <div className="flex flex-col gap-12 px-10">
                 {/* Main Hero Content  */}
                 <h1 className=" font-extrabold text-5xl tracking-wide ">
@@ -29,7 +30,7 @@ export const Hero = () => {
                     </span>
                 </h1>
                 {/* About me text */}
-                <div className=" text-lg text-wrap w-80 p-2 lg:w-[640px] bg-gradient-to-b from-blue-400 to-blue-600 text-white rounded-lg theme_border shadow-custom-neumorphic">
+                <div className=" text-lg text-wrap w-80 p-2 lg:w-[640px] bg-gradient-to-b from-blue-400 to-blue-600 text-white rounded-lg theme_border shadow-custom-grey-neu">
                     <p>
                         I recently graduated with First Class Honours in Computer Science from the University of London, and I&apos;m currently based in Singapore. I&apos;m passionate about solving real-world challenges and turning innovative ideas into impactful solutions. My goal is to continually refine my web development skills and contribute to meaningful projects that can hopefully make a difference in people&apos;s lives.
                     </p>
@@ -48,7 +49,8 @@ export const Hero = () => {
                 </div>
 
                 {/* CTA Button */}
-                <button className=" mt-8 py-4 px-8 w-64 rounded-full font-medium text-neu-blue text-xl bg-neu-white shadow-custom-neumorphic">
+                <button className="flex justify-center gap-2 items-center mt-8 py-4 px-8 w-64 rounded-full font-medium text-blue-600 text-xl bg-[#e6e7ee] shadow-custom-grey-neu transition-all ease-linear duration-150 hover:shadow-custom-grey-neu-pressed">
+                    <EnvelopeIcon className="w-8" />
                     Contact me
                 </button>
             </div>
@@ -61,7 +63,7 @@ export const Hero = () => {
                 <Image 
                     src={programmerIcon} 
                     alt="Icon of a programmer programming" 
-                    className="w-[640px] rounded-lg mb-4 shadow-custom-neumorphic"
+                    className="w-[640px] rounded-lg mb-4 shadow-custom-grey-neu"
                     priority={true}
                 />
                 {/* Group of displayed Icons using .map() */}
@@ -70,7 +72,7 @@ export const Hero = () => {
                         <Image 
                             src= {image.src}
                             alt= {image.alt}
-                            className="w-14 rounded-md shadow-custom-neumorphic theme_border"
+                            className="w-14 rounded-md shadow-custom-grey-neu theme_border"
                             key={index}
                             priority={true}
                         />

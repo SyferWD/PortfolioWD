@@ -19,6 +19,8 @@ const config: Config = {
       },
       boxShadow:{
         'custom-neumorphic': '10px 10px 25px #d9dade, -10px -10px 25px #FFFFFF',
+        'custom-grey-neu': '3px 3px 6px #b8b9be, -3px -3px 6px #fff',
+        'custom-grey-neu-pressed' : '-3px -3px 6px #b8b9be, 6px 6px 6px #fff',
       },
     },
   },

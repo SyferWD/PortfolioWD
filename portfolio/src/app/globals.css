@@ -17,7 +17,7 @@ body {
 }
 
 .form_field_style {
-    @apply text-lg rounded-lg bg-[#f1f1f1] p-2 border-2 border-black focus:outline-none focus:border-blue-600;
+    @apply text-lg rounded-lg bg-[#e6e7ee] p-2 border-2 border-black focus:outline-none focus:border-blue-600;
 }
 
 .contact_colon {
