@@ -16,7 +16,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className="bg-[#f1f1f1]">
+      <body className="bg-[#e6e7ee]">
         {children}
         <ToastContainer />
       </body>

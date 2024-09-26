@@ -35,7 +35,7 @@ const Contact = () => {
                 {/* Contact Form */}
                 <form 
                     action=""
-                    className="flex flex-col gap-6 bg-neu-white shadow-custom-neumorphic theme_border p-12"
+                    className="flex flex-col gap-6 bg-neu-white shadow-custom-grey-neu theme_border p-12"
                 >
                     {/* Name field */}
                     <input 

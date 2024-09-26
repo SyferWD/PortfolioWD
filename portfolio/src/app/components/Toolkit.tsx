@@ -55,7 +55,7 @@ interface contentItem {
           {devToolKits.map((devToolkit, index) => (
             <article 
               key={index} 
-              className="bg-neu-white py-4 px-8 my-4 rounded-xl shadow-custom-neumorphic h-64 w-64 theme_border "
+              className="bg-neu-white py-4 px-8 my-4 rounded-xl shadow-custom-grey-neu h-64 w-64 theme_border "
             >
               
               <h4 className="font-semibold text-2xl text-blue-600">
