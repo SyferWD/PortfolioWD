@@ -1,9 +1,7 @@
 'use client'
 import { EnvelopeIcon } from "@heroicons/react/16/solid"
-import Image from "next/image"
-import gitIcon from "../assets/github-mark.png"
 import { toast } from "react-toastify"
-
+import { FaGithub } from "react-icons/fa";
 
 const Contact = () => {
 
@@ -14,7 +12,7 @@ const Contact = () => {
                 toast.success("Email copied to clipboard!",
                     {
                         autoClose: 1000,
-                        position: "bottom-right"
+                        position: "top-right"
                     }
                 )
             })
@@ -35,7 +33,7 @@ const Contact = () => {
                 {/* Contact Form */}
                 <form 
                     action=""
-                    className="flex flex-col gap-6 bg-neu-white shadow-custom-grey-neu theme_border p-12"
+                    className="flex flex-col gap-6 bg-neu-white shadow-custom-grey-neu theme_border p-12 dark:border-none dark:bg-dm-sec-dark dark:shadow-custom-grey-neu-dark"
                 >
                     {/* Name field */}
                     <input 
@@ -60,7 +58,7 @@ const Contact = () => {
                         name="reason" 
                         id="reason"
                         required
-                        className="form_field_style"
+                        className="form_field_style "
                         defaultValue={"DEFAULT"}
                     >
                         <option value="DEFAULT" hidden disabled >Reason of contact</option>
@@ -88,11 +86,11 @@ const Contact = () => {
                 </form>
                 {/* Contact Details */}
                 <div >
-                    <p className="text-lg">
+                    <p className="text-lg dark:text-dm-white">
                         I&apos;m always eager to connect and discuss exciting opportunities. Looking forward to hearing from you! If you prefer to reach out via email, feel free to drop me a message via:
                     </p>
                     <div className="flex flex-col gap-4 mt-8">
-                        <p className="flex items-center gap-4">
+                        <p className="flex items-center gap-4 dark:text-dm-white">
                             <EnvelopeIcon className="w-10" />
                             <span className="contact_colon"> : </span>
                             <span
@@ -102,12 +100,8 @@ const Contact = () => {
                                 syferwebdev@gmail.com
                             </span>
                         </p>
-                        <p className="flex items-center gap-4">
-                            <Image 
-                                src={gitIcon}
-                                alt="GitHub icon"
-                                className="w-10"
-                            />
+                        <p className="flex items-center gap-4 dark:text-dm-white">
+                            <FaGithub size={40}/>
                             <span className="contact_colon"> : </span>
                             <a 
                                 href="https://github.com/SyferWD"

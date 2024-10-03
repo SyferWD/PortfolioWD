@@ -4,20 +4,24 @@
 @tailwind components;
 @tailwind utilities;
 
+* {
+    @apply transition-colors duration-300 ease-out
+}
+
 body {
     font-family: 'Baloo Thambi 2', 'sans-serif';
 }
 
 .section_title {
-    @apply text-4xl font-bold;
+    @apply text-4xl font-bold dark:text-dm-white;
 }
 
 .theme_border {
-    @apply border-2 border-black;
+    @apply border-2 border-black dark:border-white;
 }
 
 .form_field_style {
-    @apply text-lg rounded-lg bg-[#e6e7ee] p-2 border-2 border-black focus:outline-none focus:border-blue-600;
+    @apply text-lg rounded-lg bg-[#e6e7ee] p-2 border-2 border-black focus:outline-none focus:border-blue-600 dark:focus:border-dm-yellow dark:bg-[#121212] dark:text-dm-white;
 }
 
 .contact_colon {
@@ -25,5 +29,9 @@ body {
 }
 
 .contact_link {
-    @apply text-blue-600 underline hover:text-blue-800;
+    @apply text-blue-600 underline hover:text-blue-900 dark:text-dm-yellow dark:hover:text-yellow-700;
+}
+
+.cta_btn {
+    @apply flex justify-center gap-2 items-center mt-8 py-4 px-8 w-64 rounded-full font-medium text-blue-600 text-xl bg-[#e6e7ee] shadow-custom-grey-neu transition-all ease-linear duration-150 hover:shadow-custom-grey-neu-pressed dark:shadow-custom-grey-neu-dark dark:hover:shadow-custom-grey-neu-dark-pressed dark:bg-[#121212] dark:text-dm-yellow 
 }
