@@ -55,10 +55,10 @@ interface contentItem {
           {devToolKits.map((devToolkit, index) => (
             <article 
               key={index} 
-              className="bg-neu-white py-4 px-8 my-4 rounded-xl shadow-custom-grey-neu h-64 w-64 theme_border "
+              className=" py-4 px-8 my-4 rounded-xl shadow-custom-grey-neu h-64 w-64 dark:bg-dm-sec-dark dark:shadow-custom-grey-neu-dark dark:text-white bg-neu-white theme_border dark:border-none"
             >
               
-              <h4 className="font-semibold text-2xl text-blue-600">
+              <h4 className="font-semibold text-2xl text-blue-600 dark:text-dm-yellow">
                 {devToolkit.title}
               </h4>
   
@@ -66,7 +66,7 @@ interface contentItem {
               {/* Display content if avaiable */}
               {devToolkit.content.length !== 0 ? devToolkit.content.map((content, index) => (
                   <div key={index}>
-                    <strong>{content.subtitle}</strong>
+                    <strong className="underline text-lg">{content.subtitle}</strong>
                     <ul>
                       {content.items.map((item, index) => (
                         <li key={index}>{item}</li>
