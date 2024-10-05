@@ -22,18 +22,18 @@ const Contact = () => {
     }
 
   return (
-    <section className="flex justify-center">
+    <section className="flex justify-center w-full">
         <div className="flex flex-col items-center max-w-[896px]">
             <h2 className="section_title">
                 <EnvelopeIcon className="w-12 inline" /> Get In Touch
             </h2>
 
             {/* Form & contact details container */}
-            <div className="flex w-full gap-8 justify-center p-16">
+            <div className="flex flex-col md:flex-row w-3/4 md:w-full gap-8 justify-center p-16">
                 {/* Contact Form */}
                 <form 
                     action=""
-                    className="flex flex-col gap-6 bg-neu-white shadow-custom-grey-neu theme_border p-12 dark:border-none dark:bg-dm-sec-dark dark:shadow-custom-grey-neu-dark"
+                    className=" flex basis-1/2 flex-col gap-6 bg-neu-white shadow-custom-grey-neu theme_border p-12 dark:border-none dark:bg-dm-sec-dark dark:shadow-custom-grey-neu-dark"
                 >
                     {/* Name field */}
                     <input 
@@ -74,7 +74,7 @@ const Contact = () => {
                         required
                         placeholder="Let me know how I can contribute to your team."
                         rows={5}
-                        className="form_field_style w-80"
+                        className="form_field_style"
                     />
                     {/* Submit Button */}
                     <button 
@@ -85,7 +85,7 @@ const Contact = () => {
                     </button>
                 </form>
                 {/* Contact Details */}
-                <div >
+                <div className="basis-1/3">
                     <p className="text-lg dark:text-dm-white">
                         I&apos;m always eager to connect and discuss exciting opportunities. Looking forward to hearing from you! If you prefer to reach out via email, feel free to drop me a message via:
                     </p>

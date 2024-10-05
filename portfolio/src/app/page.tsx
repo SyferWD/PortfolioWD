@@ -8,14 +8,12 @@ import { Toolkit } from "./components/Toolkit";
 export default function Home() {
 
   return (
-    <main className="">
-      <div className="bg-[#e6e7ee] dark:bg-[#121212]">
+    <main className="bg-[#e6e7ee] dark:bg-[#121212]">
         <Hero />
         <Toolkit />
         <Projects />
         <Contact />
         <DarkModeBtn />
-      </div>
     </main>
   );
 }
