@@ -74,6 +74,7 @@ export const Hero = () => {
                         className="w-6 sm:w-8 md:w-10 lg:w-12 xl:w-14 rounded-md shadow-custom-grey-neu theme_border dark:shadow-custom-grey-neu-dark"
                         key={index}
                         priority={true}
+                        unoptimized
                     />
                 ))}
             </div>
