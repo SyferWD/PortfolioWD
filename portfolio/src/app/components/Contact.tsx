@@ -29,7 +29,7 @@ const Contact = () => {
             </h2>
 
             {/* Form & contact details container */}
-            <div className="flex flex-col md:flex-row w-3/4 md:w-full gap-8 justify-center p-16">
+            <div className="flex flex-col md:flex-row w-full sm:w-3/4 md:w-full gap-8 justify-center p-16">
                 {/* Contact Form */}
                 <form 
                     action=""
