@@ -35,3 +35,7 @@ body {
 .cta_btn {
     @apply flex justify-center gap-2 items-center mt-8 py-4 px-8 w-64 rounded-full font-medium text-blue-600 text-xl bg-[#e6e7ee] shadow-custom-grey-neu transition-all ease-linear duration-150 hover:shadow-custom-grey-neu-pressed dark:shadow-custom-grey-neu-dark dark:hover:shadow-custom-grey-neu-dark-pressed dark:bg-[#121212] dark:text-dm-yellow 
 }
+
+.imgCarousel_arrow {
+   @apply absolute top-0 bottom-0 p-4 cursor-pointer hover:bg-black/50
+}
