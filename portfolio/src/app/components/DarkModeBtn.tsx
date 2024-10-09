@@ -1,5 +1,5 @@
 'use client'
-import { MoonIcon } from "@heroicons/react/16/solid"
+import { MoonIcon } from "@heroicons/react/24/solid"
 import useDarkMode from "../hooks/useDarkMode"
 
 const DarkModeBtn = () => {

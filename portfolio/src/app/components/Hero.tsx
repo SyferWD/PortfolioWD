@@ -5,7 +5,7 @@ import htmlIcon from "../assets/html-icon.gif";
 import jsIcon from "../assets/js-icon.png";
 import tsIcon from "../assets/typescript-icon.png";
 import Image from "next/image";
-import { EnvelopeIcon } from "@heroicons/react/16/solid";
+import { EnvelopeIcon } from "@heroicons/react/24/solid";
 
 const images = [
     { src: htmlIcon, alt: 'HTML Icon'},
