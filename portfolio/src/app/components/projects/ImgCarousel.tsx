@@ -1,5 +1,5 @@
 'use client'
-import { ArrowLeftCircleIcon, ArrowRightCircleIcon } from "@heroicons/react/16/solid";
+import { ArrowLeftCircleIcon, ArrowRightCircleIcon } from "@heroicons/react/24/solid";
 import Image from "next/image";
 import { StaticImageData } from "next/image";
 import { useState } from "react";

@@ -1,5 +1,5 @@
 'use client'
-import { EnvelopeIcon } from "@heroicons/react/16/solid"
+import { EnvelopeIcon } from "@heroicons/react/24/solid"
 import { toast } from "react-toastify"
 import { FaGithub } from "react-icons/fa";
 
