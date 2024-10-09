@@ -23,7 +23,7 @@ const Contact = () => {
 
   return (
     <section className="flex justify-center w-full">
-        <div className="flex flex-col items-center max-w-[896px]">
+        <div className="flex flex-col items-center w-full sm:max-w-[896px]">
             <h2 className="section_title">
                 <EnvelopeIcon className="w-12 inline" /> Get In Touch
             </h2>

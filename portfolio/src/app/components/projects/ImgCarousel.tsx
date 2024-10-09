@@ -2,7 +2,7 @@
 import { ArrowLeftCircleIcon, ArrowRightCircleIcon } from "@heroicons/react/24/solid";
 import Image from "next/image";
 import { StaticImageData } from "next/image";
-import { useState } from "react";
+import { useRef, useState } from "react";
 
 interface ImgProp {
     src: StaticImageData;
@@ -16,6 +16,8 @@ interface ImgCarouselProp {
 const ImgCarousel = ( { images }: ImgCarouselProp ) => {
 
     const [index, setIndex] = useState(0);
+    const touchStartX = useRef(0);
+    const touchEndX = useRef(0);
 
     function handleNextSlide() {
         setIndex( (prevIndex) => prevIndex === images.length-1 ? 0 : prevIndex + 1 )
@@ -25,9 +27,32 @@ const ImgCarousel = ( { images }: ImgCarouselProp ) => {
         setIndex( (prevIndex) => prevIndex === 0 ? images.length - 1 : prevIndex - 1)
     }
 
+    const handleTouchStart = (e: React.TouchEvent) => {
+        touchStartX.current = e.touches[0].clientX;
+    };
+    
+      const handleTouchMove = (e: React.TouchEvent) => {
+        touchEndX.current = e.touches[0].clientX;
+    };
+    
+    const handleTouchEnd = () => {
+        if (touchStartX.current - touchEndX.current > 50) {
+          // Swipe left -> Next slide
+          handleNextSlide();
+        }
+        if (touchStartX.current - touchEndX.current < -50) {
+          // Swipe right -> Previous slide
+          handlePrevSlide();
+        }
+    };
+
     return (
-        <div className="relative flex w-full h-full overflow-hidden">
-            
+        <div 
+            className="relative flex w-full h-full overflow-hidden"
+            onTouchStart={handleTouchStart}
+            onTouchMove={handleTouchMove}
+            onTouchEnd={handleTouchEnd}
+        >
             {/* image gallery */}
             {images.map( (image) => (
                 <Image
