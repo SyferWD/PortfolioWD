@@ -4,13 +4,13 @@ import ImgCarousel from "./ImgCarousel"
 export const Projects = () => {
   return (
     <section className='flex flex-col justify-center items-center mb-12'>
-        <h2 className='section_title mb-12'>
+        <h2 className='section_title mb-12 md:mb-0'>
             Projects I Worked On
         </h2>
         {/* Projects Container */}
-        <div className='flex flex-col p-4 sm:p-12 gap-16 w-full justify-center items-center'>
+        <div className='flex flex-col p-5 sm:p-12 w-full justify-center items-center'>
           {projectsData.map((project, index) => (
-            <article key={index} className=" bg-neu-white w-5/6 xl:max-w-screen-lg shadow-custom-grey-neu theme_border dark:bg-dm-sec-dark dark:border-none dark:shadow-custom-grey-neu-dark">
+            <article key={index} className=" bg-neu-white w-full xl:max-w-screen-lg shadow-custom-grey-neu theme_border dark:bg-dm-sec-dark dark:border-none dark:shadow-custom-grey-neu-dark">
               {/* Image carousel */}
               <div className=" flex items-center ">
                 <ImgCarousel images = {project.img} />

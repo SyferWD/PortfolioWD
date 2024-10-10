@@ -30,7 +30,7 @@ export const Hero = () => {
                     </span>
                 </h1>
                 {/* About me text */}
-                <div className=" text-lg text-wrap w-11/12 leading-6 tracking-wide text-center p-3 xl:text-left xl:min-w-[480px] xl:max-w-[640px] bg-gradient-to-b from-blue-400 to-blue-600 text-white rounded-lg theme_border shadow-custom-grey-neu dark:from-dm-yellow dark:to-dm-yellow dark:text-black dark:border-black">
+                <div className=" text-lg text-wrap w-11/12 leading-6 tracking-[0.0125rem] text-center p-3 xl:text-left xl:min-w-[480px] xl:max-w-[640px] bg-gradient-to-b from-blue-400 to-blue-600 text-white rounded-lg theme_border shadow-custom-grey-neu dark:from-dm-yellow dark:to-dm-yellow dark:text-black dark:border-black">
                     <p>
                         I recently graduated with First Class Honours in Computer Science from the University of London, and I&apos;m currently based in Singapore. I&apos;m passionate about solving real-world challenges and turning innovative ideas into impactful solutions. My goal is to continually refine my web development skills and contribute to meaningful projects that can hopefully make a difference in people&apos;s lives.
                     </p>
