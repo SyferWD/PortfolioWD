@@ -32,7 +32,8 @@ const Contact = () => {
             <div className="flex flex-col md:flex-row w-full sm:w-3/4 md:w-full gap-8 justify-center py-16 px-8 sm:p-16">
                 {/* Contact Form */}
                 <form 
-                    action=""
+                    action="/api/connect/"
+                    method="POST"
                     className=" flex basis-1/2 flex-col gap-6 bg-neu-white shadow-custom-grey-neu theme_border p-12 dark:border-none dark:bg-dm-sec-dark dark:shadow-custom-grey-neu-dark"
                 >
                     {/* Name field */}

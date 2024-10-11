@@ -10,13 +10,13 @@ export const Projects = () => {
         {/* Projects Container */}
         <div className='flex flex-col p-5 sm:p-12 w-full justify-center items-center'>
           {projectsData.map((project, index) => (
-            <article key={index} className=" bg-neu-white w-full xl:max-w-screen-lg shadow-custom-grey-neu theme_border dark:bg-dm-sec-dark dark:border-none dark:shadow-custom-grey-neu-dark">
+            <article key={index} className=" bg-neu-white w-full  xl:max-w-screen-lg shadow-custom-grey-neu theme_border dark:bg-dm-sec-dark dark:border-none dark:shadow-custom-grey-neu-dark">
               {/* Image carousel */}
               <div className=" flex items-center ">
                 <ImgCarousel images = {project.img} />
               </div>
               {/* Information section */}
-              <div className="flex flex-col justify-evenly p-4 gap-4">
+              <div className="flex flex-col justify-evenly p-4 gap-4 border-t border-gray-500">
                 {/* Project Name */}
                 <h4 className="mt-6 font-semibold text-3xl text-blue-600 dark:text-dm-yellow">
                   {project.title}

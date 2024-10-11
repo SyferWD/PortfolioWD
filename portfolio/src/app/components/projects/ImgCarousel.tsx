@@ -18,13 +18,14 @@ const ImgCarousel = ( { images }: ImgCarouselProp ) => {
     const [index, setIndex] = useState(0);
     const touchStartX = useRef(0);
     const touchEndX = useRef(0);
+    const isSwiping = useRef(false);
 
     function handleNextSlide() {
-        setIndex( (prevIndex) => prevIndex === images.length-1 ? 0 : prevIndex + 1 )
+        setIndex( (prevIndex) => prevIndex === images.length - 1 ? 0 : prevIndex + 1 )
     }
 
     function handlePrevSlide() {
-        setIndex( (prevIndex) => prevIndex === 0 ? images.length - 1 : prevIndex - 1)
+        setIndex( (prevIndex) => prevIndex === 0 ? images.length - 1 : prevIndex - 1);
     }
 
     const handleTouchStart = (e: React.TouchEvent) => {
@@ -33,17 +34,27 @@ const ImgCarousel = ( { images }: ImgCarouselProp ) => {
     
       const handleTouchMove = (e: React.TouchEvent) => {
         touchEndX.current = e.touches[0].clientX;
+        // only set to true when the user's touch moved, if user click on the spot, this function will not trigger so this boolean will not be set
+        isSwiping.current= true;
     };
     
     const handleTouchEnd = () => {
-        if (touchStartX.current - touchEndX.current > 50) {
-          // Swipe left -> Next slide
-          handleNextSlide();
+        // only checks when the user is swiping 
+        if(isSwiping.current){
+            if (touchStartX.current - touchEndX.current > 50) {
+                // Swipe left -> Next slide
+                handleNextSlide();
+            }
+              if (touchStartX.current - touchEndX.current < -50) {
+                // Swipe right -> Previous slide
+                handlePrevSlide();
+            }
         }
-        if (touchStartX.current - touchEndX.current < -50) {
-          // Swipe right -> Previous slide
-          handlePrevSlide();
-        }
+        
+        // reset all tracking variables after check is performed 
+        touchStartX.current = 0;
+        touchEndX.current = 0;
+        isSwiping.current = false;
     };
 
     return (
