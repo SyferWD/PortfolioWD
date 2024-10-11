@@ -6,6 +6,7 @@ import React, { useState } from "react";
 
 const Contact = () => {
 
+    const [submittedName, setSubmittedName] = useState<string | null>(null);
     const [formData, setFormData] = useState({
         name: "",
         email: "",
@@ -57,7 +58,7 @@ const Contact = () => {
             })
 
             const data = await response.json();
-
+            setSubmittedName(data.name);
             console.log(data);
 
         } catch (error) {
@@ -75,64 +76,73 @@ const Contact = () => {
 
             {/* Form & contact details container */}
             <div className="flex flex-col md:flex-row w-full sm:w-3/4 md:w-full gap-8 justify-center py-16 px-8 sm:p-16">
-                {/* Contact Form */}
-                <form 
-                    className=" flex basis-1/2 flex-col gap-6 bg-neu-white shadow-custom-grey-neu theme_border p-12 dark:border-none dark:bg-dm-sec-dark dark:shadow-custom-grey-neu-dark"
-                    onSubmit={handleSubmit}
-                >
+
+                {submittedName ? (
+                    <p className="flex basis-1/2 justify-center text-4xl text-center text-blue-600 font-semibold bg-neu-white shadow-custom-grey-neu theme_border p-12 dark:border-none dark:bg-dm-sec-dark dark:shadow-custom-grey-neu-dark dark:text-dm-yellow">
+                        {`Thank you for reaching out, ${submittedName}. I will contact you shortly.`}
+                    </p>
+                ) : (
+                    // Form
+                    <form 
+                        className=" flex basis-1/2 flex-col gap-6 bg-neu-white shadow-custom-grey-neu theme_border p-12 dark:border-none dark:bg-dm-sec-dark dark:shadow-custom-grey-neu-dark"
+                        onSubmit={handleSubmit}
+                    >
                     {/* Name field */}
-                    <input 
-                        type="text" 
-                        id="name"
-                        name="name"
-                        required
-                        placeholder="Name"
-                        className="form_field_style"
-                        onChange={handleInputChange}
-                    />
-                    {/* Email field */}
-                    <input 
-                        type="email" 
-                        id="email"
-                        name="email"
-                        required
-                        placeholder="Email"
-                        className="form_field_style"
-                        onChange={handleInputChange}
-                    />
-                    {/* Reason selector drop-down field */}
-                    <select 
-                        name="reason" 
-                        id="reason"
-                        required
-                        className="form_field_style "
-                        defaultValue={"DEFAULT"}
-                        onChange={handleInputChange}
-                    >
-                        <option value="DEFAULT" hidden disabled >Reason of contact</option>
-                        <option value="job">Job Opportunities</option>
-                        <option value="interview">Interviews</option>
-                        <option value="freelance">Freelance</option>
-                        <option value="collab">Collab</option>
-                    </select>
-                    {/* Message field */}
-                    <textarea 
-                        name="message" 
-                        id="message"
-                        required
-                        placeholder="Let me know how I can contribute to your team."
-                        rows={5}
-                        className="form_field_style"
-                        onChange={handleInputChange}
-                    />
-                    {/* Submit Button */}
-                    <button 
-                        type="submit"
-                        className="px-4 py-2 font-semibold rounded-full bg-black text-white text-xl border-2 border-white hover:bg-neu-white hover:border-2 hover:border-black hover:text-black"
-                    >
-                        Let&apos;s Connect
-                    </button>
-                </form>
+                        <input 
+                            type="text" 
+                            id="name"
+                            name="name"
+                            required
+                            placeholder="Name"
+                            className="form_field_style"
+                            onChange={handleInputChange}
+                        />
+                        {/* Email field */}
+                        <input 
+                            type="email" 
+                            id="email"
+                            name="email"
+                            required
+                            placeholder="Email"
+                            className="form_field_style"
+                            onChange={handleInputChange}
+                        />
+                        {/* Reason selector drop-down field */}
+                        <select 
+                            name="reason" 
+                            id="reason"
+                            required
+                            className="form_field_style "
+                            defaultValue={"DEFAULT"}
+                            onChange={handleInputChange}
+                        >
+                            <option value="DEFAULT" hidden disabled >Reason of contact</option>
+                            <option value="job">Job Opportunities</option>
+                            <option value="interview">Interviews</option>
+                            <option value="freelance">Freelance</option>
+                            <option value="collab">Collab</option>
+                        </select>
+                        {/* Message field */}
+                        <textarea 
+                            name="message" 
+                            id="message"
+                            required
+                            placeholder="Let me know how I can contribute to your team."
+                            rows={5}
+                            className="form_field_style"
+                            onChange={handleInputChange}
+                        />
+                        {/* Submit Button */}
+                        <button 
+                            type="submit"
+                            className="px-4 py-2 font-semibold rounded-full bg-black text-white text-xl border-2 border-white hover:bg-neu-white hover:border-2 hover:border-black hover:text-black"
+                        >
+                            Let&apos;s Connect
+                        </button>
+                    </form>
+                )}
+
+                
                 {/* Contact Details */}
                 <div className="basis-1/3">
                     <p className="text-lg dark:text-dm-white">
