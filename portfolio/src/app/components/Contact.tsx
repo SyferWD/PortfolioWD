@@ -2,11 +2,20 @@
 import { EnvelopeIcon } from "@heroicons/react/24/solid"
 import { toast } from "react-toastify"
 import { FaGithub } from "react-icons/fa";
+import React, { useState } from "react";
 
 const Contact = () => {
 
+    const [formData, setFormData] = useState({
+        name: "",
+        email: "",
+        reason: "DEFAULT",
+        message: ""
+    })
+
+    const email = "syferwebdev@gmail.com";
+
     const copyEmail = () => {
-        const email = "syferwebdev@gmail.com";
         navigator.clipboard.writeText(email)
             .then( () => {
                 toast.success("Email copied to clipboard!",
@@ -21,6 +30,42 @@ const Contact = () => {
             })
     }
 
+    function handleInputChange(e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) {
+        const { name, value } = e.target;
+        setFormData({
+            ...formData,
+            [name] : value
+        })
+    }
+
+    async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+        e.preventDefault();
+
+        // Validation check to make sure "Reason of contact" is selected
+        if(formData.reason === "DEFAULT") {
+            alert("Please select the reason of contact, thank you.")
+            return;
+        }
+
+        try {
+            const response = await fetch("/api/connect/", {
+                method: "POST",
+                headers: {
+                    "Content-Type": 'application/json'
+                },
+                body: JSON.stringify(formData),
+            })
+
+            const data = await response.json();
+
+            console.log(data);
+
+        } catch (error) {
+            console.log(error);
+        }
+
+    }
+
   return (
     <section className="flex justify-center w-full">
         <div className="flex flex-col items-center w-full sm:max-w-[896px]">
@@ -32,9 +77,8 @@ const Contact = () => {
             <div className="flex flex-col md:flex-row w-full sm:w-3/4 md:w-full gap-8 justify-center py-16 px-8 sm:p-16">
                 {/* Contact Form */}
                 <form 
-                    action="/api/connect/"
-                    method="POST"
                     className=" flex basis-1/2 flex-col gap-6 bg-neu-white shadow-custom-grey-neu theme_border p-12 dark:border-none dark:bg-dm-sec-dark dark:shadow-custom-grey-neu-dark"
+                    onSubmit={handleSubmit}
                 >
                     {/* Name field */}
                     <input 
@@ -44,6 +88,7 @@ const Contact = () => {
                         required
                         placeholder="Name"
                         className="form_field_style"
+                        onChange={handleInputChange}
                     />
                     {/* Email field */}
                     <input 
@@ -53,6 +98,7 @@ const Contact = () => {
                         required
                         placeholder="Email"
                         className="form_field_style"
+                        onChange={handleInputChange}
                     />
                     {/* Reason selector drop-down field */}
                     <select 
@@ -61,6 +107,7 @@ const Contact = () => {
                         required
                         className="form_field_style "
                         defaultValue={"DEFAULT"}
+                        onChange={handleInputChange}
                     >
                         <option value="DEFAULT" hidden disabled >Reason of contact</option>
                         <option value="job">Job Opportunities</option>
@@ -76,6 +123,7 @@ const Contact = () => {
                         placeholder="Let me know how I can contribute to your team."
                         rows={5}
                         className="form_field_style"
+                        onChange={handleInputChange}
                     />
                     {/* Submit Button */}
                     <button 
@@ -98,7 +146,7 @@ const Contact = () => {
                                 className="contact_link cursor-pointer"
                                 onClick={copyEmail}
                             >
-                                syferwebdev@gmail.com
+                                {email}
                             </span>
                         </p>
                         <p className="flex items-center gap-4 dark:text-dm-white">
