@@ -67,7 +67,7 @@ const ImgCarousel = ( { images }: ImgCarouselProp ) => {
 
     return (
         <div 
-            className="relative flex w-full h-[50vh] overflow-hidden group"
+            className="relative flex items-center w-full h-[50vh] overflow-hidden group"
             onTouchStart={handleTouchStart}
             onTouchMove={handleTouchMove}
             onTouchEnd={handleTouchEnd}
