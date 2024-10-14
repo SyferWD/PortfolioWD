@@ -14,7 +14,7 @@ export const Projects = () => {
             <article key={index} className=" bg-neu-white w-full  xl:max-w-screen-lg shadow-custom-grey-neu theme_border dark:bg-dm-sec-dark dark:border-none dark:shadow-custom-grey-neu-dark">
               
               {/* Image carousel */}
-              <div className=" flex items-center justify-center bg-black">
+              <div className=" flex justify-center bg-black">
                 <ImgCarousel images = {project.img} />
               </div>
               

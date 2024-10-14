@@ -78,8 +78,8 @@ const ImgCarousel = ( { images }: ImgCarouselProp ) => {
                     key={image.alt}
                     src={image.src}
                     alt={image.alt}
-                    className="object-contain block transition-transform ease-in-out duration-500"
-                    style={{transform: `translateX(-${100*index}%)`, width: '100%', height: 'auto', flexShrink: 0}}
+                    className="object-contain block transition-transform ease-in-out duration-500 w-full flex-shrink-0 h-full"
+                    style={{transform: `translateX(-${100*index}%)`}}
                 />
             ) )}
             {/* left arrow icon */}
