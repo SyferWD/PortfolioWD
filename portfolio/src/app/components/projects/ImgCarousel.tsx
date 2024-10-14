@@ -2,7 +2,7 @@
 import { ArrowLeftCircleIcon, ArrowRightCircleIcon } from "@heroicons/react/24/solid";
 import Image from "next/image";
 import { StaticImageData } from "next/image";
-import { useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 
 interface ImgProp {
     src: StaticImageData;
@@ -20,9 +20,9 @@ const ImgCarousel = ( { images }: ImgCarouselProp ) => {
     const touchEndX = useRef(0);
     const isSwiping = useRef(false);
 
-    function handleNextSlide() {
+    const handleNextSlide = useCallback(()=> {
         setIndex( (prevIndex) => prevIndex === images.length - 1 ? 0 : prevIndex + 1 )
-    }
+    }, [images.length]);
 
     function handlePrevSlide() {
         setIndex( (prevIndex) => prevIndex === 0 ? images.length - 1 : prevIndex - 1);
@@ -57,9 +57,17 @@ const ImgCarousel = ( { images }: ImgCarouselProp ) => {
         isSwiping.current = false;
     };
 
+    useEffect( () => {
+        const nextSlide = setTimeout( () => {
+            handleNextSlide();
+        }, 5000)
+
+        return () => clearTimeout(nextSlide)
+    }, [index, handleNextSlide])
+
     return (
         <div 
-            className="relative flex w-full h-full overflow-hidden"
+            className="relative flex w-full h-[50vh] overflow-hidden group"
             onTouchStart={handleTouchStart}
             onTouchMove={handleTouchMove}
             onTouchEnd={handleTouchEnd}
@@ -70,31 +78,31 @@ const ImgCarousel = ( { images }: ImgCarouselProp ) => {
                     key={image.alt}
                     src={image.src}
                     alt={image.alt}
-                    className="object-cover block transition-transform ease-in-out duration-500"
-                    style={{transform: `translateX(-${100*index}%)`}}
+                    className="object-contain block transition-transform ease-in-out duration-500"
+                    style={{transform: `translateX(-${100*index}%)`, width: '100%', height: 'auto', flexShrink: 0}}
                 />
             ) )}
             {/* left arrow icon */}
             <button 
-                className="imgCarousel_arrow left-0"
+                className="imgCarousel_arrow_bg left-0 opacity-0 group-hover:opacity-100"
                 onClick={handlePrevSlide}
             >
                 <ArrowLeftCircleIcon 
-                    className="w-5"
+                    className="imgCarousel_arrow"
                 />
             </button>
             
             {/* right arrow icon */}
             <button 
-                className="imgCarousel_arrow right-0"
+                className="imgCarousel_arrow_bg right-0 opacity-0 group-hover:opacity-100"
                 onClick={handleNextSlide}
             >
                 <ArrowRightCircleIcon 
-                    className="w-5"
+                    className="imgCarousel_arrow"
                 />
             </button>
 
-            <div className=" absolute bottom-2 flex gap-2 left-1/2 -translate-x-1/2">
+            <div className=" absolute bottom-2 flex gap-2 left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100">
                 {images.map((_, imageIndex) => (
                     <button 
                         key={imageIndex}

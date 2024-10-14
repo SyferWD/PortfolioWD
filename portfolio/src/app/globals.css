@@ -37,5 +37,11 @@ body {
 }
 
 .imgCarousel_arrow {
-   @apply absolute top-0 bottom-0 p-4 cursor-pointer hover:bg-black/50
+    @apply w-5 lg:w-8 text-slate-500
 }
+
+.imgCarousel_arrow_bg {
+   @apply absolute top-0 bottom-0 p-4 cursor-pointer hover:bg-blue-600/50 hover:dark:bg-yellow-400/50
+}
+
+

@@ -1,5 +1,6 @@
 import { projectsData } from "./projectsData"
 import ImgCarousel from "./ImgCarousel"
+import { LinkIcon } from "@heroicons/react/24/solid"
 
 export const Projects = () => {
   return (
@@ -8,23 +9,36 @@ export const Projects = () => {
             Projects I Worked On
         </h2>
         {/* Projects Container */}
-        <div className='flex flex-col p-5 sm:p-12 w-full justify-center items-center'>
+        <div className='flex flex-col gap-12 p-5 sm:p-12 w-full justify-center items-center'>
           {projectsData.map((project, index) => (
             <article key={index} className=" bg-neu-white w-full  xl:max-w-screen-lg shadow-custom-grey-neu theme_border dark:bg-dm-sec-dark dark:border-none dark:shadow-custom-grey-neu-dark">
+              
               {/* Image carousel */}
-              <div className=" flex items-center ">
+              <div className=" flex items-center bg-black">
                 <ImgCarousel images = {project.img} />
               </div>
+              
               {/* Information section */}
               <div className="flex flex-col justify-evenly p-4 gap-4 border-t border-gray-500">
-                {/* Project Name */}
-                <h4 className="mt-6 font-semibold text-3xl text-blue-600 dark:text-dm-yellow">
-                  {project.title}
-                </h4>
+                
+                {/* Project Title */}
+                <div>
+                  <a 
+                    href={project.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex gap-3 mt-6 font-semibold text-3xl text-blue-600 dark:text-dm-yellow"
+                  >
+                    {project.title}
+                    <LinkIcon className="w-4" />
+                  </a>
+                </div>
+                
                 {/* Project summary */}
                 <p className="dark:text-dm-white">
                   {project.summary}
                 </p>
+                
                 {/* Tech stack used for the project */}
                 <div className="flex gap-2 sm:gap-4 flex-wrap">
                   {project.techStack.map((tech, index) => (
