@@ -49,10 +49,10 @@ export const Hero = () => {
                 </div>
 
                 {/* CTA Button */}
-                <button className="cta_btn last:mt-2 mb-12 xl:last:mt-8">
+                <a href="#contact" className="cta_btn last:mt-2 mb-12 xl:last:mt-8">
                     <EnvelopeIcon className="w-8" />
                     Contact me
-                </button>
+                </a>
             </div>
         </div>
 

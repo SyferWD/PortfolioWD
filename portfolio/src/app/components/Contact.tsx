@@ -84,6 +84,7 @@ const Contact = () => {
                     <form 
                         className=" flex basis-1/2 flex-col gap-6 bg-neu-white shadow-custom-grey-neu theme_border p-12 dark:border-none dark:bg-dm-sec-dark dark:shadow-custom-grey-neu-dark"
                         onSubmit={handleSubmit}
+                        id="contact"
                     >
                     {/* Name field */}
                         <input 
