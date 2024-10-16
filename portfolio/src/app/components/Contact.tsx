@@ -59,8 +59,6 @@ const Contact = () => {
 
             const data = await response.json();
             setSubmittedName(data.name);
-            console.log(data);
-
         } catch (error) {
             console.log(error);
         }

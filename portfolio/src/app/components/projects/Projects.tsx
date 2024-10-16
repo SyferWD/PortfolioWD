@@ -11,10 +11,10 @@ export const Projects = () => {
         {/* Projects Container */}
         <div className='flex flex-col gap-12 p-5 sm:p-12 w-full justify-center items-center'>
           {projectsData.map((project, index) => (
-            <article key={index} className=" bg-neu-white w-full  xl:max-w-screen-lg shadow-custom-grey-neu theme_border dark:bg-dm-sec-dark dark:border-none dark:shadow-custom-grey-neu-dark">
+            <article key={index} className=" bg-neu-white w-full rounded-xl xl:max-w-screen-lg shadow-custom-grey-neu theme_border dark:bg-dm-sec-dark dark:border-none dark:shadow-custom-grey-neu-dark">
               
               {/* Image carousel */}
-              <div className=" flex justify-center bg-black">
+              <div className=" flex justify-center bg-black rounded-t-lg">
                 <ImgCarousel images = {project.img} />
               </div>
               
@@ -35,7 +35,7 @@ export const Projects = () => {
                 </div>
                 
                 {/* Project summary */}
-                <p className="dark:text-dm-white">
+                <p className="dark:text-dm-white leading-7 tracking-[0.012rem]" style={{ wordSpacing : "0.1em"}}>
                   {project.summary}
                 </p>
                 

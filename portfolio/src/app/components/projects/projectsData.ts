@@ -35,7 +35,7 @@ export const projectsData = [
             { src: SpinAMealWheel, alt: "An image of Spin-A-Meal wheel screen"},
             { src: SpinAMealLogin, alt: "An image of Spin-A-Meal login screen"},
         ],
-        summary: "Spin-A-Meal is a food recipe app that allows users to search up recipes or spin to randomized a recipe. The app allows users to create an account to favourite and save recipes on their local storage which is accessible even if they are not connected to the internet. The app is build with React Native, styled with vanilla CSS, publised on Expo, with a backend supported by Firebase and recipes obtained from an open sourced API.",
+        summary: "Spin-A-Meal is an intuitive food recipe mobile app designed to make meal planning fun and easy. Users can search for specific recipes or shake things up by spinning a wheel to discover a randomized recipe. The app features user accounts, enabling the ability to favorite and save recipes directly to local storage, ensuring access to them even without an internet connection. Built using React Native for cross-platform functionality and styled with vanilla CSS, Spin-A-Meal is published on Expo. The backend is powered by Firebase, providing secure user authentication and data management, while recipe data is sourced from an open API.",
         techStack: ["React Native", "Expo", "CSS", "Firebase", "Javascript", "Open source API"]
     }
 ]
