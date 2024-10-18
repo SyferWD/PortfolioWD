@@ -76,7 +76,7 @@ interface contentItem {
               )) : (
                 <ul>
                   {devToolkit.subContent.map((subContent, index) => (
-                    <li key={index} className="font-semibold" > {subContent} </li>
+                    <li key={index} className="font-semibold text-sm md:text-base" > {subContent} </li>
                   ))}
                 </ul>
               ) } 

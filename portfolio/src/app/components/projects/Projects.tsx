@@ -1,10 +1,10 @@
 import { projectsData } from "./projectsData"
 import ImgCarousel from "./ImgCarousel"
-import { LinkIcon } from "@heroicons/react/24/solid"
+import { ArrowUpRightIcon } from "@heroicons/react/24/solid"
 
 export const Projects = () => {
   return (
-    <section className='flex flex-col justify-center items-center mb-12'>
+    <section className='flex flex-col justify-center items-center'>
         <h2 className='section_title mb-12 md:mb-0'>
             Projects I Worked On
         </h2>
@@ -27,10 +27,10 @@ export const Projects = () => {
                     href={project.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex gap-3 mt-6 font-semibold text-3xl text-blue-600 dark:text-dm-yellow"
+                    className="inline-flex gap-3 mt-6 font-semibold text-3xl text-blue-600 dark:text-dm-yellow group"
                   >
                     {project.title}
-                    <LinkIcon className="w-4" />
+                    <ArrowUpRightIcon className="w-4 group-hover:translate-x-1 group-hover:translate-y-[-4px] group-hover:scale-110 transition-transform duration-200 ease-in-out" />
                   </a>
                 </div>
                 
@@ -43,7 +43,7 @@ export const Projects = () => {
                 <div className="flex gap-2 sm:gap-4 flex-wrap">
                   {project.techStack.map((tech, index) => (
                     <div key={index}
-                      className="py-1 px-2 sm:py-2 sm:px-4 text-[#f1f1f1] bg-black dark:text-dm-sec-dark dark:bg-dm-white"
+                      className="py-1 px-2 sm:py-2 sm:px-4 text-[#f1f1f1] bg-black dark:text-dm-yellow"
                     >
                       {tech}
                     </div>

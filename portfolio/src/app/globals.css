@@ -17,7 +17,7 @@ body {
 }
 
 .section_title {
-    @apply text-4xl font-bold dark:text-dm-white;
+    @apply text-4xl font-bold dark:text-dm-white text-center;
 }
 
 .theme_border {

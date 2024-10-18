@@ -57,16 +57,16 @@ export const Hero = () => {
         </div>
 
         {/* Right side: Display images */}
-        <div className="flex w-3/4 justify-evenly xl:flex-col xl:justify-center 2xl:justify-end xl:w-full h-full items-center pb-20">
+        <div className="flex flex-col gap-6 justify-center sm:flex w-3/4 sm:justify-evenly xl:flex-col xl:justify-center 2xl:justify-end xl:w-full h-full items-center sm:pb-20">
             {/* Main Image */}
             <Image 
                 src={programmerIcon} 
                 alt="Icon of a programmer programming" 
-                className="w-1/2 xl:min-w-[480px] xl:max-w-[640px] 2xl:w-[720px] rounded-lg mb-4 shadow-custom-grey-neu dark:shadow-custom-grey-neu-dark"
+                className="w-3/4 xl:min-w-[480px] xl:max-w-[640px] 2xl:w-[720px] rounded-lg shadow-custom-grey-neu dark:shadow-custom-grey-neu-dark"
                 priority={true}
             />
-            {/* Group of displayed Icons using .map() */}
-            <div className="flex justify-evenly w-1/4 gap-8 flex-wrap xl:justify-evenly xl:w-[640px] xl:mt-6 xl:flex-nowrap ">
+            {/* Group of displayed Icons */}
+            <div className="flex justify-evenly gap-8 sm:flex-wrap xl:justify-evenly xl:w-[640px] xl:mt-6 xl:flex-nowrap ">
                 {images.map((image, index) => (
                     <Image 
                         src= {image.src}

@@ -84,7 +84,6 @@ const Contact = () => {
                     <form 
                         className=" flex basis-1/2 flex-col gap-6 bg-neu-white shadow-custom-grey-neu theme_border p-12 dark:border-none dark:bg-dm-sec-dark dark:shadow-custom-grey-neu-dark"
                         onSubmit={handleSubmit}
-                        id="contact"
                     >
                     {/* Name field */}
                         <input 
@@ -119,7 +118,8 @@ const Contact = () => {
                             <option value="job">Job Opportunities</option>
                             <option value="interview">Interviews</option>
                             <option value="freelance">Freelance</option>
-                            <option value="collab">Collab</option>
+                            <option value="collab">Collaboration</option>
+                            <option value="others">Others</option>
                         </select>
                         {/* Message field */}
                         <textarea 
