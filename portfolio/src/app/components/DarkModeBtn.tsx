@@ -1,6 +1,5 @@
 'use client'
 import { MoonIcon } from "@heroicons/react/24/solid"
-// import useDarkMode from "../hooks/useDarkMode"
 import { useState } from "react"
 import Cookies from "js-cookie"
 

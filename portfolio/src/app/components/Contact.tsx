@@ -1,5 +1,5 @@
 'use client'
-import { EnvelopeIcon } from "@heroicons/react/24/solid"
+import { ArrowTopRightOnSquareIcon, ClipboardDocumentIcon, EnvelopeIcon } from "@heroicons/react/24/solid"
 import { toast } from "react-toastify"
 import { FaGithub } from "react-icons/fa";
 import React, { useState } from "react";
@@ -152,10 +152,11 @@ const Contact = () => {
                             <EnvelopeIcon className="w-10" />
                             <span className="contact_colon"> : </span>
                             <span
-                                className="contact_link cursor-pointer"
+                                className="contact_link cursor-pointer flex gap-2 group"
                                 onClick={copyEmail}
                             >
                                 {email}
+                                <ClipboardDocumentIcon className="w-4 group-hover:scale-150 transition-transform duration-300 ease-in"/>
                             </span>
                         </p>
                         <p className="flex items-center gap-4 dark:text-dm-white">
@@ -164,9 +165,10 @@ const Contact = () => {
                             <a 
                                 href="https://github.com/SyferWD"
                                 target="_blank"
-                                className="contact_link"
+                                className="contact_link flex gap-2 group"
                             >
                                 https://github.com/SyferWD
+                                <ArrowTopRightOnSquareIcon className="w-4 group-hover:translate-x-[2px] group-hover:translate-y-[-2px] transition-transform duration-300 ease-in-out" />
                             </a>
                         </p>
                     </div>
