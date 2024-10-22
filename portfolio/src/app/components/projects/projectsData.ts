@@ -21,7 +21,7 @@ export const projectsData = [
             { src: HomeAPetRehomingForm, alt: "An image of HomeAPet rehoming form" },
             { src: HomeAPetDashboard, alt: "An image of HomeAPet logged in dashboard" }
         ],
-        summary: "HomeAPet is a pet adoption website that allows users to create an account to apply for adopting a pet or put up a pet for rehoming. This site was created with NextJS framework with self written custom API endpoints, login authentication and authorization, leveraging on ImgBB for image hosting while storing all the data in PostgreSQL hosted on Supabase, through Prisma and lastly, styled with TailwindCSS.",
+        summary: "HomeAPet is a pet adoption platform built with the Next.js framework, offering users the ability to create accounts, apply for pet adoptions, and rehome pets. The platform features secure authentication and authorization, with custom API endpoints tailored for dynamic interactions. Pet images are hosted via ImgBB, while all application data is efficiently managed using PostgreSQL, hosted on Supabase, and accessed through Prisma ORM. The user interface is designed for a seamless and responsive experience, crafted with TailwindCSS to ensure a modern and visually appealing design.",
         techStack: ["React", "NextJS", "Typescript","Tailwind","Prisma", "PostgreSQL", "Vercel", "Rest API", ]
     },
     {
