@@ -115,11 +115,11 @@ const Contact = () => {
                             onChange={handleInputChange}
                         >
                             <option value="DEFAULT" hidden disabled >Reason of contact</option>
-                            <option value="job">Job Opportunities</option>
-                            <option value="interview">Interviews</option>
-                            <option value="freelance">Freelance</option>
-                            <option value="collab">Collaboration</option>
-                            <option value="others">Others</option>
+                            <option value="Job Opportunities">Job Opportunities</option>
+                            <option value="Interviews">Interviews</option>
+                            <option value="Freelance">Freelance</option>
+                            <option value="Collaboration">Collaboration</option>
+                            <option value="Others">Others</option>
                         </select>
                         {/* Message field */}
                         <textarea 
