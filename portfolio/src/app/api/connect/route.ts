@@ -1,5 +1,5 @@
 import prisma from "@/app/lib/db";
-import { NextResponse } from "next/server";
+import { NextRequest, NextResponse } from "next/server";
 import DOMPurify from 'dompurify';
 import { JSDOM } from 'jsdom';
 
@@ -59,4 +59,23 @@ export const POST = async (req: Request) => {
         return NextResponse.json({error: "Database error", err: err}, {status: 500})
     }
 
+}
+
+export async function GET(request: NextRequest) {
+    const authHeader = request.headers.get('authorization');
+    if (authHeader !== `Bearer ${process.env.CRON_SECRET}`) {
+      return new Response('Unauthorized', {
+        status: 401,
+      });
+    }
+
+    try{
+        const total = await prisma.contact.count();
+        
+        return NextResponse.json({message: total ,success: true });
+        
+    } catch(err) {
+        return NextResponse.json({error: "Database error", err: err}, {status: 500})
+    }
+   
 }
