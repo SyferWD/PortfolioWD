@@ -71,8 +71,12 @@ export async function GET(request: NextRequest) {
 
     try{
         const total = await prisma.contact.count();
-        
-        return NextResponse.json({message: total ,success: true });
+
+        const firstName = await prisma.contact.findUnique({
+            where: { id: 1 }
+        })
+
+        return NextResponse.json({message: `${total} msgs, fn: ${firstName?.name}` ,success: true });
         
     } catch(err) {
         return NextResponse.json({error: "Database error", err: err}, {status: 500})
