@@ -67,6 +67,7 @@ const ImgCarousel = ( { images }: ImgCarouselProp ) => {
 
     return (
         <div 
+            data-testid = "carousel"
             className="relative flex items-center w-full h-[50vh] overflow-hidden group"
             onTouchStart={handleTouchStart}
             onTouchMove={handleTouchMove}
@@ -86,6 +87,7 @@ const ImgCarousel = ( { images }: ImgCarouselProp ) => {
             <button 
                 className="imgCarousel_arrow_bg left-0 opacity-0 group-hover:opacity-100"
                 onClick={handlePrevSlide}
+                aria-label="Previous slide"
             >
                 <ArrowLeftCircleIcon 
                     className="imgCarousel_arrow"
@@ -96,6 +98,7 @@ const ImgCarousel = ( { images }: ImgCarouselProp ) => {
             <button 
                 className="imgCarousel_arrow_bg right-0 opacity-0 group-hover:opacity-100"
                 onClick={handleNextSlide}
+                aria-label="Next slide"
             >
                 <ArrowRightCircleIcon 
                     className="imgCarousel_arrow"
@@ -106,6 +109,7 @@ const ImgCarousel = ( { images }: ImgCarouselProp ) => {
                 {images.map((_, imageIndex) => (
                     <button 
                         key={imageIndex}
+                        data-testid = "naviBtn"
                         className="p-1 rounded-full border-2 border-white focus-visible:p-3 focus-visible:rounded-none "
                         style={{backgroundColor: `${imageIndex === index ? "black" : "grey"}`}}
                         onClick={() => setIndex(imageIndex)}

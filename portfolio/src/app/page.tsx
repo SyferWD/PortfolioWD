@@ -5,6 +5,7 @@ import DarkModeBtn from "./components/DarkModeBtn";
 import { Hero } from "./components/Hero";
 import { Projects } from "./components/projects/Projects";
 import { Toolkit } from "./components/Toolkit";
+import { projectsData } from "./components/projects/projectsData";
 
 export default function Home() {
 
@@ -15,7 +16,7 @@ export default function Home() {
         <DarkModeBtn theme={theme}/>
         <Hero />
         <Toolkit />
-        <Projects />
+        <Projects projectsData = {projectsData} />
         <div className="py-6" id="contact"/>
         <Contact />
     </main>

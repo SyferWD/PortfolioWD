@@ -9,7 +9,7 @@ interface themeProp {
 
 const DarkModeBtn = ( {theme}: themeProp ) => {
 
-    const [isDarkMode, setIsDarkMode] = useState(theme === 'dark' ? true : false);
+  const [isDarkMode, setIsDarkMode] = useState(theme === 'dark' ? true : false);
 
     function toggleDark(): void{
       setIsDarkMode( prevMode => {
@@ -18,7 +18,7 @@ const DarkModeBtn = ( {theme}: themeProp ) => {
           Cookies.set('theme', (newMode ? 'dark' : 'light'), {expires: 365});
           return newMode;
       });
-  };
+    };
 
   return (
     <button 

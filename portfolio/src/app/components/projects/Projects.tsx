@@ -1,8 +1,20 @@
-import { projectsData } from "./projectsData"
 import ImgCarousel from "./ImgCarousel"
-import { ArrowUpRightIcon } from "@heroicons/react/24/solid"
+import { ArrowUpRightIcon } from "@heroicons/react/24/solid";
+import { StaticImageData } from "next/image";
 
-export const Projects = () => {
+interface Project {
+  title: string;
+  url: string;
+  img: { src:StaticImageData; alt:string}[];
+  summary: string;
+  techStack: string[];
+}
+
+interface ProjectProp {
+  projectsData: Project[];
+}
+
+export const Projects = ( {projectsData}: ProjectProp) => {
   return (
     <section className='flex flex-col justify-center items-center'>
         <h2 className='section_title mb-12 md:mb-0'>
@@ -40,7 +52,7 @@ export const Projects = () => {
                 </p>
                 
                 {/* Tech stack used for the project */}
-                <div className="flex gap-2 sm:gap-4 flex-wrap">
+                <div data-testid="techStack" className="flex gap-2 sm:gap-4 flex-wrap">
                   {project.techStack.map((tech, index) => (
                     <div key={index}
                       className="py-1 px-2 sm:py-2 sm:px-4 text-[#f1f1f1] bg-black dark:text-dm-yellow"
