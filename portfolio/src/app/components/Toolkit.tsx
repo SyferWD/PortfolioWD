@@ -41,7 +41,7 @@ interface contentItem {
     {
       title : "Tools & Platform",
       content: [],
-      subContent: ["Git","Expo", "Vercel", "Prisma", "Supabase", "PostgreSQL", "ImgBB (Image hosting)"]
+      subContent: ["Git","Expo", "Vercel", "Prisma", "Supabase", "PostgreSQL", "Jest (Testing)","ImgBB (Image hosting)"]
     }
   ]
   
@@ -50,12 +50,12 @@ interface contentItem {
       <section className="mt-8 p-8 flex flex-col justify-center items-center">
         <h2 className="section_title">My Developer Toolkit</h2>
         {/* Cards container */}
-        <div className="w-full p-12 flex justify-center items-center flex-wrap gap-8 md:gap-12 lg:gap-24">
+        <div className="w-full py-12 px-4 flex justify-center items-center flex-wrap gap-8 md:gap-12 lg:gap-24">
           {/* Card */}
           {devToolKits.map((devToolkit, index) => (
             <article 
               key={index} 
-              className=" py-4 px-8 my-4 rounded-xl shadow-custom-grey-neu h-64 w-64 dark:bg-dm-sec-dark dark:shadow-custom-grey-neu-dark dark:text-white bg-neu-white theme_border dark:border-none"
+              className=" py-4 px-8 my-4 rounded-xl shadow-custom-grey-neu h-72 w-64 dark:bg-dm-sec-dark dark:shadow-custom-grey-neu-dark dark:text-white bg-neu-white theme_border dark:border-none"
             >
               
               <h4 className="font-semibold text-2xl text-blue-600 dark:text-dm-yellow">
